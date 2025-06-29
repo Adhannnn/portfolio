@@ -1,6 +1,6 @@
 // src/sections/SectionExperience.jsx
 import { motion } from "framer-motion";
-import Matra from "../assets/images/companies/matra.jpg"
+import MatraLogo from "../assets/images/favicon.png"
 
 /* ---------- 1. Experience Data */
 const experiences = [
@@ -8,7 +8,7 @@ const experiences = [
     company: "PT. Matra Unggul Teknologi",
     period: "Apr 2025 – May 2025",
     role: "Part‑Time Web Developer",
-    logo: { Matra }, // 96×96 transparent png/svg
+    logo:  MatraLogo , 
     points: [
       "Developed an informational website for a printing business as a part‑time developer.",
       "Delivered the project on schedule with high client satisfaction.",
