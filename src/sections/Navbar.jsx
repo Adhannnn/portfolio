@@ -54,7 +54,7 @@ const Navbar = () => {
       {/* Full‑width inner wrapper */}
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
-          {/* Logo / brand */}
+          {/* My Name */}
           <a href="#" className="text-2xl font-semibold leading-tight">
             Wahyu
             <br />

@@ -13,7 +13,7 @@ export default function SectionOne() {
       transition={{ duration: 1, ease: "easeOut" }}
       className="relative w-screen min-h-screen bg-black text-white flex items-center overflow-hidden"
     >
-      {/* top‑left dots */}
+      {/* Top‑left dots */}
       <div className="hidden sm:flex absolute top-10 left-4 sm:left-16 space-x-4 sm:space-x-6">
         {[...Array(3)].map((_, i) => (
           <span
@@ -23,7 +23,7 @@ export default function SectionOne() {
         ))}
       </div>
 
-      {/* bottom‑right dots */}
+      {/* Bottom‑right dots */}
       <div className="hidden sm:flex absolute bottom-10 right-4 sm:right-16 space-x-4 sm:space-x-6">
         {[...Array(3)].map((_, i) => (
           <span
@@ -33,9 +33,9 @@ export default function SectionOne() {
         ))}
       </div>
 
-      {/* content wrapper */}
+      {/* Content Wrapper */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-        {/* text column */}
+        {/* Text Column */}
         <div className="flex flex-col justify-center text-center lg:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-light leading-snug">
             Hi, I’m <span className="font-extrabold tracking-wide">Adhan</span>
@@ -58,7 +58,7 @@ export default function SectionOne() {
             <span className="text-lg sm:text-xl select-none">.pdf</span>
           </div>
 
-          {/* social links */}
+          {/* Social Links */}
           <div className="mt-10 flex justify-center lg:justify-start space-x-6">
             <a
               href="https://www.linkedin.com/in/wahyuramadhann/"
@@ -90,7 +90,7 @@ export default function SectionOne() {
           </div>
         </div>
 
-        {/* portrait column */}
+        {/* Portrait Column */}
         <div className="flex items-center justify-center order-1 lg:order-none">
           <div className="h-60 w-60 sm:h-72 sm:w-72 md:h-80 md:w-80 lg:h-96 lg:w-96 rounded-full overflow-hidden shadow-xl">
             <img

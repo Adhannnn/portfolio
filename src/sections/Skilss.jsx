@@ -1,7 +1,7 @@
 // src/sections/SectionThree.jsx
 import { motion } from "framer-motion";
 
-/* quick local imports for logos — swap paths for yours */
+/* Logo Import */
 import tailwindLogo from "../assets/images/tailwindcss.png";
 import htmlLogo     from "../assets/images/html.png";
 import cssLogo      from "../assets/images/css.png";
@@ -13,7 +13,7 @@ import flutterLogo  from "../assets/images/flutter.png";
 import psqlLogo     from "../assets/images/postgresql.png";
 import mysqlLogo    from "../assets/images/mysql.png";
 
-/* ✨ list makes the JSX nice & lean */
+/* List of Skills */
 const skills = [
   { logo: tailwindLogo, title: "Tailwind CSS", subtitle: "CSS Framework" },
   { logo: htmlLogo,    title: "HTML",          subtitle: "Markup Language" },
@@ -35,11 +35,12 @@ export default function SectionThree() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 1, ease: "easeOut" }}
-      /* horizontal gradient */
+      
+      /* Gradient */
       className="relative w-screen bg-gradient-to-r from-[#0e0e0e] via-[#2d2d2d] to-[#b5b5b5] text-white overflow-hidden"
     >
       <div className="mx-auto max-w-7xl px-6 py-16 lg:py-24 grid gap-12 lg:grid-cols-[260px_1fr_180px]">
-        {/* — left column — */}
+        {/* Left Column */}
         <div className="flex flex-col justify-between">
           <div>
             <h2 className="text-4xl sm:text-5xl font-extrabold mb-2">
@@ -53,7 +54,7 @@ export default function SectionThree() {
           </p>
         </div>
 
-        {/* — skills grid — */}
+        {/*  Skills Grid  */}
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {skills.map(({ logo, title, subtitle }, i) => (
             <div
@@ -79,7 +80,7 @@ export default function SectionThree() {
           ))}
         </div>
 
-        {/* — right “coming soon” column — */}
+        {/* "Coming Soon" */}
         <div className="hidden lg:flex flex-col items-center justify-center">
           <div className="h-56 w-px bg-white/30" />
           <p className="rotate-90 translate-x-[38px] whitespace-nowrap tracking-widest text-gray-200">

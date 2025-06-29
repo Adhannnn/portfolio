@@ -1,7 +1,6 @@
 // src/sections/SectionTwo.jsx
 import { motion } from "framer-motion";
-import aboutPic from "../assets/images/Adhanganteng.jpg"; // update path if needed
-
+import Adhan from "../assets/images/Adhanganteng.jpg"; 
 export default function SectionTwo() {
   return (
     <motion.section
@@ -18,22 +17,14 @@ export default function SectionTwo() {
         overflow-hidden
       "
     >
-      {/* ── decorative diagonal lines ── */}
-      <div className="pointer-events-none absolute inset-0">
-        {/* top‑left to centre */}
-        <span className="absolute -top-10 -left-10 h-[2px] w-[150%] bg-black/60 rotate-[135deg] origin-left" />
-        {/* bottom‑right to centre */}
-        <span className="absolute -bottom-10 -right-10 h-[2px] w-[150%] bg-black/60 rotate-[135deg] origin-right" />
-      </div>
-
-      {/* heading */}
+      {/* Heading */}
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-12">
         About&nbsp;Me
       </h2>
 
-      {/* main grid */}
+      {/* Main Grid */}
       <div className="mx-auto max-w-6xl px-6 grid gap-12 md:grid-cols-2">
-        {/* text column */}
+        {/* Text Column */}
         <div className="text-lg sm:text-xl leading-relaxed text-gray-800 indent-8 space-y-8">
           <p>
             Hello there! My name is Wahyu Ramadhan, but you can call me Adhan. I
@@ -51,11 +42,11 @@ export default function SectionTwo() {
           </p>
         </div>
 
-        {/* photo column */}
+        {/* Photo Column */}
         <div className="flex items-center justify-center">
           <figure className="relative">
             <img
-              src={aboutPic}
+              src={ Adhan }
               alt="Adhan giving thumbs‑up (2020)"
               className="
                 h-64 w-64 sm:h-72 sm:w-72 md:h-80 md:w-80

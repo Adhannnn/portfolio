@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SectionOne from "./sections/LandingPage";
 import SectionTwo from "./sections/AboutMe";
 import SectionThree from "./sections/Skilss";
+import SectionExperience from "./sections/Experiences";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -30,6 +31,7 @@ export default function App() {
               <SectionOne />
               <SectionTwo />
               <SectionThree />
+              <SectionExperience />
             </motion.main>
           </>
         )}
