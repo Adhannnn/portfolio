@@ -6,6 +6,7 @@ import profilePic from "../assets/images/Adhanganteng.jpg";
 export default function SectionOne() {
   return (
     <motion.section
+    id="landing"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -37,7 +38,7 @@ export default function SectionOne() {
         {/* text column */}
         <div className="flex flex-col justify-center text-center lg:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-light leading-snug">
-            Hi, I’m <span className="font-extrabold tracking-wide">Wahyu</span>
+            Hi, I’m <span className="font-extrabold tracking-wide">Adhan</span>
           </h1>
 
           <p className="mt-6 sm:mt-8 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg md:text-xl leading-relaxed text-gray-300">

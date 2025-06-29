@@ -41,14 +41,16 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navLinks = [
-    { href: "#", label: "Home" },
-    { href: "#", label: "About Me" },
+    { href: "#landing", label: "Home" },
+    { href: "#aboutMe", label: "About Me" },
+    { href: "#skills", label: "Skills" },
+    { href: "#experiences", label: "Experiences"},
     { href: "#", label: "Projects" },
     { href: "#", label: "Contact" },
   ];
 
   return (
-    <nav className="bg-black text-white shadow-lg font-sans w-full fixed top-0 left-0 z-50">
+    <nav className="bg-black/65 text-white shadow-lg font-sans w-full fixed top-0 left-0 z-50">
       {/* Full‑width inner wrapper */}
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">

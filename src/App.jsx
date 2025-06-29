@@ -3,6 +3,8 @@ import SplashScreen from "./sections/SplashScreen";
 import Navbar from "./sections/Navbar";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionOne from "./sections/LandingPage";
+import SectionTwo from "./sections/AboutMe";
+import SectionThree from "./sections/Skilss";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -26,6 +28,8 @@ export default function App() {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <SectionOne />
+              <SectionTwo />
+              <SectionThree />
             </motion.main>
           </>
         )}
