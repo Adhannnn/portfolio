@@ -61,7 +61,7 @@ export default function SectionOne() {
           {/* social links */}
           <div className="mt-10 flex justify-center lg:justify-start space-x-6">
             <a
-              href="https://www.linkedin.com/in/your-profile"
+              href="https://www.linkedin.com/in/wahyuramadhann/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
@@ -70,7 +70,7 @@ export default function SectionOne() {
               <FaLinkedin />
             </a>
             <a
-              href="https://www.instagram.com/your-profile"
+              href="https://www.instagram.com/whyramdhn"
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
@@ -79,7 +79,7 @@ export default function SectionOne() {
               <SiInstagram className="rounded-md p-[2px] bg-gradient-to-tr from-yellow-400 via-pink-600 to-purple-600" />
             </a>
             <a
-              href="https://github.com/your-profile"
+              href="https://github.com/Adhannnn"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
