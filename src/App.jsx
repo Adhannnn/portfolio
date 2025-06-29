@@ -6,6 +6,7 @@ import SectionOne from "./sections/LandingPage";
 import SectionTwo from "./sections/AboutMe";
 import SectionThree from "./sections/Skilss";
 import SectionExperience from "./sections/Experiences";
+import SectionFive from "./sections/Projects";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -32,6 +33,7 @@ export default function App() {
               <SectionTwo />
               <SectionThree />
               <SectionExperience />
+              <SectionFive />
             </motion.main>
           </>
         )}
