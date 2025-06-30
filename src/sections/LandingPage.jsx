@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
-import profilePic from "../assets/images/Adhanganteng.jpg";
+// import profilePic from "../assets/images/Adhanganteng.jpg";
+// import Waving from "../assets/animation/waving.lottie";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function SectionOne() {
     return (
@@ -92,13 +94,9 @@ export default function SectionOne() {
 
             {/* Portrait Column */}
             <div className="flex items-center justify-center order-1 lg:order-none">
-            <div className="h-60 w-60 sm:h-72 sm:w-72 md:h-80 md:w-80 lg:h-96 lg:w-96 rounded-full overflow-hidden shadow-xl">
-                <img
-                src={profilePic}
-                alt="Wahyu portrait"
-                className="h-full w-full object-cover"
-                />
-            </div>
+                <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
+                    <DotLottieReact src="https://lottie.host/d5aafb07-a5d9-4916-88df-4ccc5542cc8c/izHiqcTluP.lottie" loop autoplay />
+                </div>
             </div>
         </div>
         </motion.section>

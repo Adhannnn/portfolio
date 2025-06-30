@@ -10,8 +10,10 @@ const experiences = [
     role: "Part‑Time Web Developer",
     logo:  MatraLogo , 
     points: [
-      "Developed an informational website for a printing business as a part‑time developer.",
-      "Delivered the project on schedule with high client satisfaction.",
+      "Created a responsive informational website for a local printing business using Wix.",
+      "Customized layout, color scheme, and sections to align with the client's branding and service offerings.",
+      "Integrated contact forms, product showcases, and social media links for better engagement.",
+      "Completed the project on schedule and received positive feedback from the client."
     ],
   },
 ];

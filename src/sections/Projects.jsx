@@ -12,13 +12,16 @@ import DemoVideo from "../assets/videos/MonitoringSystem.mp4";
 /* Website Portfolio */
 import Portfolio from "../assets/images/portfolio.png";
 
+/* Car Control */
+import CarControl from "../assets/images/Projects-Arduino/CarControl.jpeg";
+import CarDemo from "../assets/images/Projects-Arduino/VideoDemo.mp4";
 
 const projects = [
   {
     /* Monitoring System */
     title: "Monitoring Dashboard",
     description:
-      "Dashboard for monitoring sensor in room by using MQTT and Laravel",
+      "Dashboard for monitoring sensor in room by using MQTT and Laravel.",
     details: `This dashboard was built using Laravel for backend, MQTT for real-time communication,
 and Chart.js for visualizing the data from temperature, humidity, and gas sensors.
 It includes features like room grouping, user management, and notification system.`,
@@ -32,15 +35,25 @@ It includes features like room grouping, user management, and notification syste
   {
     /* Portfolio Website */
     title: "Portfolio Website",
-    description: "My Portfolio Website",
+    description: "My Portfolio Website.",
     details: "My Portfolio Website is created using ReactJS + Vite to showcase my Skills, Experiences, and many others. And in hope to get an opportunity for us to work together.",
     thumbnail: Portfolio,
     images: [
         Portfolio
     ],
-    videos: null,
+    video: null,
     techStack: ["ReactJS", "Vite", "Tailwind CSS"],
-  }
+  },  
+  {
+    /* Car Control */
+    title: "Control Car Using PS3 Controller",
+    description: "Controling Car Using PS3 Controller with NodeMCU Micro Controller.",
+    details: "This project showcases a robotic car controlled using a PlayStation 3 (PS3) controller, with a NodeMCU microcontroller serving as the core component. The system uses Bluetooth to receive joystick inputs from the PS3 controller, which are then interpreted by the NodeMCU to control motor directions. Additionally, MQTT is integrated as part of the tech stack to enable real-time communication and remote monitoring. This setup demonstrates an IoT approach to robotics, combining wireless control, microcontroller programming, and MQTT-based messaging for scalable control and data feedback.",
+    thumbnail: CarControl,
+    images: [CarControl],
+    video: CarDemo,
+    techStack: ["C++", "Python", "MQTT"]
+  },
 ];
 
 function ImageSlider({ images, video }) {
