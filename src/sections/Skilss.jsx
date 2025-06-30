@@ -1,6 +1,7 @@
 // src/sections/SectionThree.jsx
 import { motion } from "framer-motion";
 
+
 /* Logo Import */
 import tailwindLogo from "../assets/images/tailwindcss.png";
 import htmlLogo     from "../assets/images/html.png";
@@ -37,7 +38,7 @@ export default function SectionThree() {
       transition={{ duration: 1, ease: "easeOut" }}
       
       /* Gradient */
-      className="relative w-screen bg-gradient-to-r from-[#0e0e0e] via-[#2d2d2d] to-[#b5b5b5] text-white overflow-hidden"
+      className="relative w-screen bg-black text-white overflow-hidden"
     >
       <div className="mx-auto max-w-7xl px-6 py-16 lg:py-24 grid gap-12 lg:grid-cols-[260px_1fr_180px]">
         {/* Left Column */}

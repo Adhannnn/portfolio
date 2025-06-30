@@ -7,7 +7,7 @@ import LoginPage from "../assets/images/loginPage.png";
 import AddRoomModal from "../assets/images/AddRoom.png";
 import Logout from "../assets/images/Logout.png";
 import DeleteRoom from "../assets/images/deleteRoomModal.png";
-import DemoVideo from "../assets/videos/MonitoringSystem.mp4"; 
+import DemoVideo from "../assets/videos/MonitoringSystem.mp4";
 
 /* Website Portfolio */
 import Portfolio from "../assets/images/portfolio.png";
@@ -36,23 +36,24 @@ It includes features like room grouping, user management, and notification syste
     /* Portfolio Website */
     title: "Portfolio Website",
     description: "My Portfolio Website.",
-    details: "My Portfolio Website is created using ReactJS + Vite to showcase my Skills, Experiences, and many others. And in hope to get an opportunity for us to work together.",
+    details:
+      "My Portfolio Website is created using ReactJS + Vite to showcase my Skills, Experiences, and many others. And in hope to get an opportunity for us to work together.",
     thumbnail: Portfolio,
-    images: [
-        Portfolio
-    ],
+    images: [Portfolio],
     video: null,
     techStack: ["ReactJS", "Vite", "Tailwind CSS"],
-  },  
+  },
   {
     /* Car Control */
     title: "Control Car Using PS3 Controller",
-    description: "Controling Car Using PS3 Controller with NodeMCU Micro Controller.",
-    details: "This project showcases a robotic car controlled using a PlayStation 3 (PS3) controller, with a NodeMCU microcontroller serving as the core component. The system uses Bluetooth to receive joystick inputs from the PS3 controller, which are then interpreted by the NodeMCU to control motor directions. Additionally, MQTT is integrated as part of the tech stack to enable real-time communication and remote monitoring. This setup demonstrates an IoT approach to robotics, combining wireless control, microcontroller programming, and MQTT-based messaging for scalable control and data feedback.",
+    description:
+      "Controling Car Using PS3 Controller with NodeMCU Micro Controller.",
+    details:
+      "This project showcases a robotic car controlled using a PlayStation 3 (PS3) controller, with a NodeMCU microcontroller serving as the core component. The system uses Bluetooth to receive joystick inputs from the PS3 controller, which are then interpreted by the NodeMCU to control motor directions. Additionally, MQTT is integrated as part of the tech stack to enable real-time communication and remote monitoring. This setup demonstrates an IoT approach to robotics, combining wireless control, microcontroller programming, and MQTT-based messaging for scalable control and data feedback.",
     thumbnail: CarControl,
     images: [CarControl],
     video: CarDemo,
-    techStack: ["C++", "Python", "MQTT"]
+    techStack: ["C++", "Python", "MQTT"],
   },
 ];
 
@@ -73,9 +74,17 @@ function ImageSlider({ images, video }) {
   const isVideo = video && index === slides.length - 1;
 
   const variants = {
-    enter: (dir) => ({ x: dir > 0 ? 300 : -300, opacity: 0, position: "absolute" }),
+    enter: (dir) => ({
+      x: dir > 0 ? 300 : -300,
+      opacity: 0,
+      position: "absolute",
+    }),
     center: { x: 0, opacity: 1, position: "relative" },
-    exit: (dir) => ({ x: dir > 0 ? -300 : 300, opacity: 0, position: "absolute" }),
+    exit: (dir) => ({
+      x: dir > 0 ? -300 : 300,
+      opacity: 0,
+      position: "absolute",
+    }),
   };
 
   return (
@@ -128,7 +137,6 @@ function ImageSlider({ images, video }) {
   );
 }
 
-
 export default function SectionFive() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeProject, setActiveProject] = useState(null);
@@ -170,7 +178,9 @@ export default function SectionFive() {
                 <div className="flex justify-between items-center mb-2">
                   <h3 className="text-lg font-bold">{project.title}</h3>
                 </div>
-                <p className="text-sm text-gray-300 mb-4">{project.description}</p>
+                <p className="text-sm text-gray-300 mb-4">
+                  {project.description}
+                </p>
 
                 <div className="mt-auto">
                   <button
@@ -183,6 +193,20 @@ export default function SectionFive() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* ---- separator + info ---- */}
+        <div className="mt-14 flex items-center justify-center">
+          {/* garis kiri */}
+          <span className="flex-grow border-t border-dashed border-gray-600" />
+
+          {/* teks */}
+          <span className="mx-4 text-xs sm:text-sm tracking-widest uppercase text-gray-400 whitespace-nowrap">
+            more private projects &amp; coming&nbsp;soon
+          </span>
+
+          {/* garis kanan */}
+          <span className="flex-grow border-t border-dashed border-gray-600" />
         </div>
 
         <AnimatePresence>
@@ -207,8 +231,13 @@ export default function SectionFive() {
                   &times;
                 </button>
 
-                <h3 className="text-xl font-bold mb-4">{activeProject.title}</h3>
-                <ImageSlider images={activeProject.images} video={activeProject.video} />
+                <h3 className="text-xl font-bold mb-4">
+                  {activeProject.title}
+                </h3>
+                <ImageSlider
+                  images={activeProject.images}
+                  video={activeProject.video}
+                />
 
                 <p className="text-sm text-gray-300 whitespace-pre-line mt-4">
                   {activeProject.details}

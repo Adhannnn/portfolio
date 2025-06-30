@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
-// import profilePic from "../assets/images/Adhanganteng.jpg";
-// import Waving from "../assets/animation/waving.lottie";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function SectionOne() {

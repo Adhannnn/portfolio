@@ -1,7 +1,11 @@
 // src/sections/SectionTwo.jsx
 import { motion } from "framer-motion";
 import Adhan from "../assets/images/Adhanganteng.jpg"; 
+import Aos from "aos";
 export default function SectionTwo() {
+
+  Aos.init();
+
   return (
     <motion.section
       id="aboutMe"
@@ -11,21 +15,21 @@ export default function SectionTwo() {
       transition={{ duration: 1, ease: "easeOut" }}
       /* full‑width gradient + corner lines */
       className="
-        relative w-screen
-        bg-gradient-to-b from-gray-100 via-gray-200 to-gray-400
+        relative w-full
+       bg-black
         py-20 sm:py-24
         overflow-hidden
       "
     >
       {/* Heading */}
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-12">
-        About&nbsp;Me
+      <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-12">
+        About Me
       </h2>
 
       {/* Main Grid */}
       <div className="mx-auto max-w-6xl px-6 grid gap-12 md:grid-cols-2">
         {/* Text Column */}
-        <div className="text-lg sm:text-xl leading-relaxed text-gray-800 indent-8 space-y-8">
+        <div className="text-lg sm:text-xl leading-relaxed text-white indent-8 space-y-8">
           <p>
             Hello there! My name is Wahyu Ramadhan, but you can call me Adhan. I
             have a strong passion for <span className="font-bold">Internet of Things</span> and <span className="font-bold">Software
@@ -43,8 +47,8 @@ export default function SectionTwo() {
         </div>
 
         {/* Photo Column */}
-        <div className="flex items-center justify-center">
-          <figure className="relative">
+        <div className="flex items-center justify-center" >
+          <figure className="relative" >
             <img
               src={ Adhan }
               alt="Adhan giving thumbs‑up (2020)"
@@ -53,9 +57,6 @@ export default function SectionTwo() {
                 rounded-full object-cover shadow-lg
               "
             />
-            <figcaption className="absolute bottom-2 right-3 text-sm sm:text-base text-black/80 italic">
-              *2020
-            </figcaption>
           </figure>
         </div>
       </div>

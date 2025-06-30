@@ -28,10 +28,10 @@ export default function SectionExperience() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       /* light‑to‑dark horizontal gradient */
-      className="relative w-screen bg-gradient-to-r from-gray-50 via-gray-200 to-gray-400 py-20 sm:py-24 overflow-hidden"
+      className="relative w-screenbg-black py-20 sm:py-24 overflow-hidden"
     >
-      <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold mb-16">
-        Experience
+      <h2 className="text-white text-center text-3xl sm:text-4xl md:text-5xl font-extrabold mb-16">
+        Experiences
       </h2>
 
       <div className="mx-auto max-w-5xl px-6 space-y-16">
@@ -54,15 +54,15 @@ export default function SectionExperience() {
             </div>
 
             {/* detail block */}
-            <div className="text-gray-900">
+            <div className="text-white">
               <h3 className="text-2xl sm:text-3xl font-semibold">
                 {exp.company}
               </h3>
               <p className="mt-1 text-lg text-gray-500">{exp.period}</p>
 
-              <p className="mt-4 text-lg font-medium">{exp.role}</p>
+              <p className="text-white mt-4 text-lg font-medium">{exp.role}</p>
 
-              <ul className="mt-4 list-disc pl-5 space-y-2 text-base sm:text-lg leading-relaxed text-gray-800">
+              <ul className="text-white mt-4 list-disc pl-5 space-y-2 text-base sm:text-lg leading-relaxed text-gray-800">
                 {exp.points.map((pt, i) => (
                   <li key={i}>{pt}</li>
                 ))}
