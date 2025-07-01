@@ -46,7 +46,7 @@ const HamburgerIcon = () => (
         { href: "#skills", label: "Skills" },
         { href: "#experiences", label: "Experiences"},
         { href: "#projects", label: "Projects" },
-        { href: "#", label: "Contact" },
+        { href: "#contact", label: "Contact" },
     ];
 
     return (

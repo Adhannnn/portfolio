@@ -19,3 +19,28 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.input {
+  @apply w-full rounded-lg border-2 border-gray-400 bg-transparent px-4 py-5 text-white placeholder-transparent focus:border-indigo-400 focus:outline-none;
+}
+
+.floating-label {
+  @apply absolute left-4 top-5 bg-black px-1 text-gray-400 transition-all pointer-events-none;
+  @apply peer-focus:-top-3 peer-focus:text-xs peer-focus:text-indigo-400;
+  @apply peer-[&:not(:placeholder-shown)]:-top-3 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-indigo-400;
+}
+
+@keyframes slide-in-out {
+  0%, 100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  10%, 90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-out {
+  animation: slide-in-out 4s both;
+}

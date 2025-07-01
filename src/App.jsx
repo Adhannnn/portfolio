@@ -8,6 +8,8 @@ import SectionThree from "./sections/Skilss";
 import SectionExperience from "./sections/Experiences";
 import SectionFive from "./sections/Projects";
 import { Scrollbar } from "react-scrollbars-custom";
+import AnimatedCursor from "./components/AnimatedCursor";
+import ContactSection from "./sections/Contacts";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -19,6 +21,7 @@ export default function App() {
           <SplashScreen key="splash" onFinish={() => setShowSplash(false)} />
         ) : (
           <>
+            <AnimatedCursor />
             <Navbar />
 
             <motion.main
@@ -53,6 +56,7 @@ export default function App() {
                   <SectionThree />
                   <SectionExperience />
                   <SectionFive />
+                  <ContactSection />
                 </div>
               </Scrollbar>
             </motion.main>

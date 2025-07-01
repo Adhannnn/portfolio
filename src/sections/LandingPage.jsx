@@ -49,13 +49,11 @@ export default function SectionOne() {
             {/* CV button */}
             <div className="mt-8 sm:mt-10 flex justify-center lg:justify-start items-center space-x-2">
                 <a
-                href="/cv.pdf"
-                download
+                href="#contact"
                 className="rounded-full bg-gradient-to-b from-gray-300 to-gray-500 px-6 sm:px-8 py-2.5 sm:py-3 text-base sm:text-lg font-semibold text-black shadow-md hover:opacity-90 transition"
                 >
-                My CV
+                Get in Touch
                 </a>
-                <span className="text-lg sm:text-xl select-none">.pdf</span>
             </div>
 
             {/* Social Links */}
