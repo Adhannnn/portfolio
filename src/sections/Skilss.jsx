@@ -13,6 +13,7 @@ import laravelLogo  from "../assets/images/laravel.png";
 import flutterLogo  from "../assets/images/flutter.png";
 import psqlLogo     from "../assets/images/postgresql.png";
 import mysqlLogo    from "../assets/images/mysql.png";
+import figmalogo from "../assets/images/figma-rmbg.png";
 
 /* List of Skills */
 const skills = [
@@ -26,6 +27,7 @@ const skills = [
   { logo: flutterLogo, title: "Flutter",       subtitle: "Dart Framework" },
   { logo: psqlLogo,    title: "PostgreSQL",    subtitle: "Database" },
   { logo: mysqlLogo,   title: "MySQL",         subtitle: "Database" },
+  { logo: figmalogo,   title: "Figma",         subtitle: "Design Application" },
 ];
 
 export default function SectionThree() {

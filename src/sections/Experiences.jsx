@@ -28,7 +28,7 @@ export default function SectionExperience() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       /* light‑to‑dark horizontal gradient */
-      className="relative w-screenbg-black py-20 sm:py-24 overflow-hidden"
+      className="relative w-screen bg-black py-20 sm:py-24 overflow-hidden"
     >
       <h2 className="text-white text-center text-3xl sm:text-4xl md:text-5xl font-extrabold mb-16">
         Experiences

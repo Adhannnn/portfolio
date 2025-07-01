@@ -8,7 +8,12 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative w-screen bg-black text-white overflow-hidden"
         >
+
+            <div className="">
+
+            </div>
             
         </motion.section>
     );
