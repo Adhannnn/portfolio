@@ -100,7 +100,7 @@ export default function ContactSection() {
         <a href="https://instagram.com/whyramdhn" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
           <FaInstagram />
         </a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
+        <a href="https://www.linkedin.com/in/wahyuramadhann/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
           <FaLinkedin />
         </a>
       </motion.div>
