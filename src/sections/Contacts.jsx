@@ -57,7 +57,7 @@ export default function ContactSection() {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="w-full max-w-2xl bg-white/5 backdrop-blur-lg rounded-2xl shadow-xl p-8 md:p-14 flex flex-col gap-6"
+        className="w-full max-w-2xl bg-black backdrop-blur-lg rounded-2xl shadow-xl p-8 md:p-14 flex flex-col gap-6"
       >
         <h3 className="text-2xl md:text-3xl font-semibold">Let's become partners!</h3>
 
