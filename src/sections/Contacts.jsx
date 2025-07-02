@@ -62,12 +62,12 @@ export default function ContactSection() {
         <h3 className="text-2xl md:text-3xl font-semibold">Let's become partners!</h3>
 
         <div className="relative">
-          <input id="name" name="user_name" placeholder=" " required className="input peer" />
+          <input id="name" name="name" placeholder=" " required className="input peer" />
           <label htmlFor="name" className="floating-label">Name</label>
         </div>
 
         <div className="relative">
-          <input id="email" name="user_email" type="email" placeholder=" " required className="input peer" />
+          <input id="email" name="email" type="email" placeholder=" " required className="input peer" />
           <label htmlFor="email" className="floating-label">Email</label>
         </div>
 
