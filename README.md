@@ -20,9 +20,12 @@ The portfolio is still under development and will continue to grow as I learn an
 
 ```bash
 # 1. Clone or extract this repo
-cd react-portfolio
+git clone https://github.com/Adhannnn/portfolio.git
 
-# 2. Start the container in the background
+# 2. Open the folder
+cd portfolio
+
+# 3. Start the container in the background
 docker compose up -d
 
 # 3. Open the site in your browser
