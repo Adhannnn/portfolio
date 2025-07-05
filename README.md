@@ -1,12 +1,32 @@
-# React + Vite
+# Portfolio Website (Dockerized)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a personal portfolio website that I built using **React**, **Vite**, and **Tailwind CSS**.  
+I created it to showcase my profile, skills, and some of the projects I’ve worked on.
 
-Currently, two official plugins are available:
+To make the website easier to demonstrate on any machine (especially for evaluation purposes), I packaged the entire app using **Docker**. This allows it to be run without installing Node.js or any front-end tooling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The portfolio is still under development and will continue to grow as I learn and build more.
 
-## Expanding the ESLint configuration
+# Tech Stack :
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# How to Run ? (With Docker)
+
+### Requirements
+* Docker  
+* Docker Compose
+
+### Steps
+
+```bash
+# 1. Clone or extract this repo
+cd react-portfolio
+
+# 2. Start the container in the background
+docker compose up -d
+
+# 3. Open the site in your browser
+# (The dev server inside the container listens on port 5173)
+http://localhost:5173
+
+
