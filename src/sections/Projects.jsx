@@ -16,6 +16,13 @@ import Portfolio from "../assets/images/portfolio.png";
 import CarControl from "../assets/images/Projects-Arduino/CarControl.jpeg";
 import CarDemo from "../assets/images/Projects-Arduino/VideoDemo.mp4";
 
+/* First Website */
+import landingPage from "../assets/images/first-web/landing.png";
+import aboutPage from "../assets/images/first-web/about.png";
+import menuPage from "../assets/images/first-web/menu.png";
+import benefitPage from "../assets/images/first-web/benefits.png";
+import contactPage from "../assets/images/first-web/menu.png";
+
 const projects = [
   {
     /* Monitoring System */
@@ -55,6 +62,16 @@ It includes features like room grouping, user management, and notification syste
     video: CarDemo,
     techStack: ["C++", "Python", "MQTT"],
   },
+  {
+    /* First Website */ 
+    title: "Gimi Gimi Resale",
+    description: "This is my first website for advertising the foods",
+    details: "",
+    thumbnail: landingPage,
+    images: [landingPage, aboutPage, menuPage, benefitPage, contactPage],
+    videos: null,
+    techStack: ["HTML", "CSS"]
+  }
 ];
 
 function ImageSlider({ images, video }) {
