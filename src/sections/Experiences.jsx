@@ -7,10 +7,10 @@ const experiences = [
   {
     company: "PT. Matra Unggul Teknologi",
     period: "Apr 2025 – May 2025",
-    role: "Part‑Time Web Developer",
+    role: "Web Developer",
     logo:  MatraLogo , 
     points: [
-      "Created a responsive informational website for a local printing business using Wix.",
+      "Created a responsive informational website for a local printing business.",
       "Customized layout, color scheme, and sections to align with the client's branding and service offerings.",
       "Integrated contact forms, product showcases, and social media links for better engagement.",
       "Completed the project on schedule and received positive feedback from the client."
