@@ -26,7 +26,7 @@ git clone https://github.com/Adhannnn/portfolio.git
 cd portfolio
 
 # 3. Start the container in the background
-docker compose up -d
+docker compose up --build
 
 # 3. Open the site in your browser
 # (The dev server inside the container listens on port 5173)
