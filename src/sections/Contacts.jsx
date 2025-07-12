@@ -82,7 +82,7 @@ export default function ContactSection() {
         </div>
 
         <div className="flex justify-end">
-          <button type="submit" className="rounded-xl bg-white text-black font-semibold px-8 py-3 transition hover:bg-gray-200 active:scale-95">
+          <button type="submit" className="rounded-xl bg-white text-black font-semibold px-8 py-3 transition hover:cursor-pointer hover:bg-gray-200 active:scale-95">
             Send
           </button>
         </div>
