@@ -25,7 +25,10 @@ git clone https://github.com/Adhannnn/portfolio.git
 # 2. Open the folder
 cd portfolio
 
-# 3. Start the container in the background
+# 3. Build image docker
+docker build -t portfolio .
+
+# 4. Start the container in the background
 docker compose up --build
 
 # 3. Open the site in your browser
