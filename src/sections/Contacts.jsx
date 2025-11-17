@@ -3,9 +3,9 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-const SERVICE_ID = "YOUR_SERVICE";
-const TEMPLATE_ID = "YOUR_TEMPLATE";
-const PUBLIC_KEY = "YOUR_PUBLIC";
+const SERVICE_ID = "service_340u80f";
+const TEMPLATE_ID = "template_eriyspc";
+const PUBLIC_KEY = "j9YvifEf4ir1i6Xot";
 
 export default function ContactSection() {
   const formRef = useRef(null);

@@ -1,6 +1,7 @@
 // src/sections/SectionExperience.jsx
 import { motion } from "framer-motion";
 import MatraLogo from "../assets/images/favicon.png"
+import AhmLogo from "../assets/images/ahmlogo.png"
 
 /* ---------- 1. Experience Data */
 const experiences = [
@@ -16,6 +17,18 @@ const experiences = [
       "Completed the project on schedule and received positive feedback from the client."
     ],
   },
+  {
+    company: "PT. Astra Honda Motor",
+    period: "Sep 2025 - Present",
+    role: "Software Engineer Intern",
+    logo: AhmLogo,
+    points: [
+      "Migrated 4+ internal applications from legacy systems to modern technology frameworks, improving overall system performance, reliability, and maintainability.",
+      "Successfully delivered all assigned applications within scheduled deadlines, maintaining consistent quality standards.",
+      "Participated in debugging and testing phases to ensure system stability and minimize deployment issues.",
+      "Documented migration workflows and created clear technical guides to assist future maintenance teams."
+    ]
+  }
 ];
 
 /* ---------- 2.  Section component ------------ */

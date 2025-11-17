@@ -10,7 +10,7 @@ import DeleteRoom from "../assets/images/deleteRoomModal.png";
 import DemoVideo from "../assets/videos/MonitoringSystem.mp4";
 
 /* Website Portfolio */
-import Portfolio from "../assets/images/portfolio.png";
+import Portfolio from "../assets/images/PortfolioWebsite.png";
 
 /* Car Control */
 import CarControl from "../assets/images/Projects-Arduino/CarControl.jpeg";

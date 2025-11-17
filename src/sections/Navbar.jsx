@@ -77,6 +77,7 @@ const HamburgerIcon = () => (
             after:bg-cyan-300
             after:transition-[width] after:duration-300
             hover:after:w-full
+            after:pointer-events-none
         "
                 >
                     {link.label}

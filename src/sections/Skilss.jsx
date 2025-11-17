@@ -9,6 +9,7 @@ import cssLogo      from "../assets/images/css.png";
 import jsLogo       from "../assets/images/javascript.png";
 import cppLogo      from "../assets/images/cpp.png";
 import phpLogo      from "../assets/images/php.png";
+import javalogo     from "../assets/images/java.png";
 import laravelLogo  from "../assets/images/laravel.png";
 import flutterLogo  from "../assets/images/flutter.png";
 import psqlLogo     from "../assets/images/postgresql.png";
@@ -23,6 +24,7 @@ const skills = [
   { logo: jsLogo,      title: "JavaScript",    subtitle: "Programming Language" },
   { logo: cppLogo,     title: "C++",           subtitle: "Programming Language" },
   { logo: phpLogo,     title: "PHP",           subtitle: "Programming Language" },
+  { logo: javalogo,    title: "Java",          subtitle: "Programming Language"},
   { logo: laravelLogo, title: "Laravel",       subtitle: "PHP Framework" },
   { logo: flutterLogo, title: "Flutter",       subtitle: "Dart Framework" },
   { logo: psqlLogo,    title: "PostgreSQL",    subtitle: "Database" },
