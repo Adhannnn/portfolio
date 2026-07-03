@@ -2,28 +2,57 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Load the Google Font used for handwriting
+const fontStyle = document.createElement("style");
+fontStyle.innerHTML = `@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');`;
+document.head.appendChild(fontStyle);
+
 export default function SplashScreen({ onFinish }) {
   const [writingDone, setWritingDone] = useState(false);
-  const pathRef = useRef(null);
-  const [pathLength, setPathLength] = useState(0);
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [progress, setProgress] = useState(0);
 
+  // Measure the container width once after mount
   useEffect(() => {
-    // After component mounts, measure the total length of the SVG path
-    if (pathRef.current) {
-      const length = pathRef.current.getTotalLength();
-      setPathLength(length);
+    if (containerRef.current) {
+      setContainerWidth(containerRef.current.offsetWidth);
     }
   }, []);
 
+  // Animate the mask from left to right over 4 seconds
   useEffect(() => {
-    if (pathLength > 0) {
-      // The animation duration is 4 seconds, then we wait 1 second before finishing
+    if (containerWidth === 0) return;
+    let startTime = performance.now();
+    let rafId;
+
+    const step = (now) => {
+      const elapsed = now - startTime;
+      const t = Math.min(elapsed / 4000, 1);
+      // Use a subtle easing (easeOutCubic)
+      const eased = 1 - Math.pow(1 - t, 3);
+      setProgress(eased);
+      if (t < 1) {
+        rafId = requestAnimationFrame(step);
+      }
+    };
+    rafId = requestAnimationFrame(step);
+
+    return () => cancelAnimationFrame(rafId);
+  }, [containerWidth]);
+
+  // After the writing animation finishes, wait 1 second then show the start button
+  useEffect(() => {
+    if (progress === 1) {
       const timer = setTimeout(() => {
         setWritingDone(true);
-      }, 5000); // 4s animation + 1s pause
+      }, 1000);
       return () => clearTimeout(timer);
     }
-  }, [pathLength]);
+  }, [progress]);
+
+  // Width of the mask rectangle
+  const maskWidth = progress * containerWidth;
 
   return (
     <AnimatePresence>
@@ -34,35 +63,57 @@ export default function SplashScreen({ onFinish }) {
         exit={{ opacity: 0 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
       >
-        {/* SVG overlay for handwriting animation */}
-        <svg
-          viewBox="0 0 600 200"
-          className="w-3/4 max-w-2xl h-auto"
-          xmlns="http://www.w3.org/2000/svg"
+        {/* Outer container for the SVG – width is measured for the mask */}
+        <div
+          ref={containerRef}
+          className="relative w-3/4 max-w-2xl h-auto"
         >
-          {/* The path that will be drawn */}
-          <path
-            d="M 50 100 
-               C 80 60, 120 60, 150 100
-               C 180 140, 220 140, 250 100
-               C 280 60, 320 60, 350 100
-               C 380 140, 420 140, 450 100
-               C 480 60, 520 60, 550 100"
-            fill="none"
-            stroke="white"
-            strokeWidth="4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeDasharray={pathLength}
-            strokeDashoffset={pathLength}
-            style={{
-              transition: `stroke-dashoffset 4s ease-in-out`,
-            }}
-            ref={pathRef}
-          />
-        </svg>
+          <svg
+            viewBox="0 0 600 200"
+            className="w-full h-full"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              {/* Mask that reveals the text gradually */}
+              <mask id="writingMask">
+                <rect
+                  x="0"
+                  y="0"
+                  width={maskWidth}
+                  height="200"
+                  fill="white"
+                />
+              </mask>
+            </defs>
 
-        {/* Start button after writing finishes */}
+            {/* The text in a cursive, handwriting font */}
+            <text
+              x="50%"
+              y="50%"
+              textAnchor="middle"
+              dominantBaseline="central"
+              fontSize="64"
+              fontFamily="'Great Vibes', 'Brush Script MT', cursive"
+              fill="#ffffff"
+              mask="url(#writingMask)"
+            >
+              Hello There
+            </text>
+
+            {/* Animated pen tip that follows the left edge of the reveal */}
+            <circle
+              cx={
+                // convert progress (0‑1) to the x‑coordinate on the SVG canvas
+                progress * 600
+              }
+              cy="120"
+              r="5"
+              fill="rgba(255,255,255,0.7)"
+            />
+          </svg>
+        </div>
+
+        {/* "Start" button, shown after the writing finishes */}
         {writingDone && (
           <motion.div
             onClick={onFinish}
