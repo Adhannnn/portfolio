@@ -9,7 +9,7 @@ export default function SplashScreen({ onFinish }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setTypingDone(true);
-    }, 5000); 
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -20,27 +20,31 @@ export default function SplashScreen({ onFinish }) {
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
       >
         {/* Teks utama */}
         <motion.h1
           className="text-white text-6xl md:text-9xl font-bold font-[Poppins] mb-4"
-          initial={{ scale: 0.8, opacity: 0, y: 0 }}
+          initial={{ scale: 0.5, opacity: 0, y: 0 }}
           animate={{
             scale: 1,
             opacity: 1,
             y: typingDone ? -50 : 0,
           }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{
+            scale: { duration: 1.5, ease: "easeOut" },
+            opacity: { duration: 1.5, ease: "easeOut" },
+            y: { duration: 2, ease: "easeInOut" },
+          }}
         >
           <Typewriter
             words={["Hello There ! 👋"]}
             loop={1}
             cursor
             cursorStyle="|"
-            typeSpeed={200}
+            typeSpeed={100}
             deleteSpeed={50}
-            delaySpeed={1500}
+            delaySpeed={2000}
           />
         </motion.h1>
 
@@ -53,7 +57,7 @@ export default function SplashScreen({ onFinish }) {
             tabIndex={0}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
           >
             Start
           </motion.div>
