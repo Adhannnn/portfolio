@@ -1,6 +1,8 @@
-FROM node:20-alpine
+FROM node:20.18-alpine
 
 WORKDIR /app
+
+RUN npm config set registry https://registry.npmmirror.com
 
 COPY package*.json ./
 

@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import MatraLogo from "../assets/images/favicon.png"
 import AhmLogo from "../assets/images/ahmlogo.png"
+import B7Logo from "../assets/images/bintang-toedjoe.jpeg"
 
 /* ---------- 1. Experience Data */
 const experiences = [
@@ -11,22 +12,35 @@ const experiences = [
     role: "Web Developer",
     logo:  MatraLogo , 
     points: [
-      "Created a responsive informational website for a local printing business.",
-      "Customized layout, color scheme, and sections to align with the client's branding and service offerings.",
-      "Integrated contact forms, product showcases, and social media links for better engagement.",
-      "Completed the project on schedule and received positive feedback from the client."
+      "Designed and developed a responsive company profile website for a local printing business using modern web technologies.",
+      "Customized website layouts, branding elements, and user interface components based on client requirements.",
+      "Implemented contact forms, product showcase pages, and social media integration to enhance customer engagement.",
+      "Optimized the website for desktop and mobile devices, ensuring a responsive and user-friendly experiences.",
     ],
   },
   {
     company: "PT. Astra Honda Motor",
-    period: "Sep 2025 - Present",
+    period: "Sep 2025 - Feb 2026",
     role: "Software Engineer Intern",
     logo: AhmLogo,
     points: [
-      "Migrated 4+ internal applications from legacy systems to modern technology frameworks, improving overall system performance, reliability, and maintainability.",
-      "Successfully delivered all assigned applications within scheduled deadlines, maintaining consistent quality standards.",
-      "Participated in debugging and testing phases to ensure system stability and minimize deployment issues.",
-      "Documented migration workflows and created clear technical guides to assist future maintenance teams."
+      "Migrated 7+ internal web applications from legacy systems to modern architectures while preserving existing business functionality.",
+      "Developed and maintained applications features using Java, Spring MVC, Hibernate, Oracle Database, HTML, CSS, JavaScript, and Bootstrap.",
+      "Refactored legacy code by applying clean code principles and reusable components, improving code maintainability and reducing duplication.",
+      "Performed debugging, functional testing, and issue resolution to ensure application stability before deployment.",
+      "Produced technical documentation covering migration workflows, implementation details, and system behavior to support future maintainance."
+    ]
+  },
+  {
+    company: "PT. Bintang Toedjoe",
+    period: "Mar 2026 - July 2026",
+    role: "Project Digitalization Intern",
+    logo: B7Logo,
+    points: [
+      "Dveloped internal digitalization platform using Next.js, Go, PostgreSQL, and RESTful APIs.",
+      "Collaborated with cross-functional teams to analyze business workflows and translate requirements into scallable digital solutions.",
+      "Integrated frontend interfaces with backend services while performing testing and debugging to ensure application reliability.",
+      "Contributed to the digitalization of manual business process by developing centralized web-based applications that improve operational efficiency",
     ]
   }
 ];
