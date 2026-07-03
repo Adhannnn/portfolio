@@ -25,8 +25,6 @@ export default function SplashScreen({ onFinish }) {
     }
   }, [pathLength]);
 
-  const [writingDone, setWritingDone] = useState(false);
-
   return (
     <AnimatePresence>
       <motion.div
