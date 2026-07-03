@@ -16,9 +16,9 @@ const HamburgerIcon = () => (
         d="M4 6h16M4 12h16m-7 6h7"
         />
     </svg>
-    );
+);
 
-    const CloseIcon = () => (
+const CloseIcon = () => (
     <svg
         className="h-6 w-6"
         xmlns="http://www.w3.org/2000/svg"
@@ -33,10 +33,10 @@ const HamburgerIcon = () => (
         d="M6 18L18 6M6 6l12 12"
         />
     </svg>
-    );
+);
 
-    /* ——— Navbar ——— */
-    const Navbar = () => {
+/* ——— Navbar ——— */
+const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -68,17 +68,18 @@ const HamburgerIcon = () => (
                     key={link.label}
                     href={link.href}
                     className="
-            relative
-            transition-transform duration-300 hover:-translate-y-[2px]
+                        relative
 
-            after:content-[''] after:absolute
-            after:left-0 after:-bottom-[5px]
-            after:h-[2px] after:w-0
-            after:bg-cyan-300
-            after:transition-[width] after:duration-300
-            hover:after:w-full
-            after:pointer-events-none
-        "
+                        after:content-[''] after:absolute
+                        after:left-0 after:bottom-[-5px]
+                        after:h-[2px] after:w-full
+                        after:bg-cyan-300
+                        after:scale-x-0
+                        after:origin-left
+                        after:transition-transform after:duration-300
+                        hover:after:scale-x-100
+                        after:pointer-events-none
+                    "
                 >
                     {link.label}
                 </a>
