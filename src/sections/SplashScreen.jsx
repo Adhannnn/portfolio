@@ -1,5 +1,5 @@
 // src/SplashScreen.jsx
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Load the Google Font used for handwriting
@@ -9,27 +9,17 @@ document.head.appendChild(fontStyle);
 
 export default function SplashScreen({ onFinish }) {
   const [writingDone, setWritingDone] = useState(false);
-  const containerRef = useRef(null);
-  const [containerWidth, setContainerWidth] = useState(0);
   const [progress, setProgress] = useState(0);
 
-  // Measure the container width once after mount
+  // Animate the writing reveal from left to right over 3.2 seconds
   useEffect(() => {
-    if (containerRef.current) {
-      setContainerWidth(containerRef.current.offsetWidth);
-    }
-  }, []);
-
-  // Animate the mask from left to right over 4 seconds
-  useEffect(() => {
-    if (containerWidth === 0) return;
     let startTime = performance.now();
     let rafId;
 
     const step = (now) => {
       const elapsed = now - startTime;
-      const t = Math.min(elapsed / 4000, 1);
-      // Use a subtle easing (easeOutCubic)
+      const t = Math.min(elapsed / 3200, 1);
+      // Subtle cubic ease-out
       const eased = 1 - Math.pow(1 - t, 3);
       setProgress(eased);
       if (t < 1) {
@@ -39,42 +29,46 @@ export default function SplashScreen({ onFinish }) {
     rafId = requestAnimationFrame(step);
 
     return () => cancelAnimationFrame(rafId);
-  }, [containerWidth]);
+  }, []);
 
-  // After the writing animation finishes, wait 1 second then show the start button
+  // After writing finishes, reveal the action button
   useEffect(() => {
     if (progress === 1) {
       const timer = setTimeout(() => {
         setWritingDone(true);
-      }, 1000);
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [progress]);
 
-  // Width of the mask rectangle
-  const maskWidth = progress * containerWidth;
+  // SVG viewBox coordinates: 0 0 750 200
+  const svgWidth = 750;
+  const maskWidth = progress * svgWidth;
 
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50"
+        className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50 px-4"
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 1.5, ease: "easeInOut" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
       >
-        {/* Outer container for the SVG – width is measured for the mask */}
-        <div
-          ref={containerRef}
-          className="relative w-3/4 max-w-2xl h-auto"
-        >
+        {/* Outer SVG container */}
+        <div className="relative w-full max-w-3xl h-auto flex items-center justify-center">
           <svg
-            viewBox="0 0 600 200"
-            className="w-full h-full"
+            viewBox="0 0 750 200"
+            className="w-full h-auto max-h-[300px]"
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
-              {/* Mask that reveals the text gradually */}
+              <linearGradient id="splashGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#ffffff" />
+                <stop offset="60%" stopColor="#e0f7fa" />
+                <stop offset="100%" stopColor="#80deea" />
+              </linearGradient>
+
+              {/* Mask that reveals the text in SVG user units */}
               <mask id="writingMask">
                 <rect
                   x="0"
@@ -86,48 +80,52 @@ export default function SplashScreen({ onFinish }) {
               </mask>
             </defs>
 
-            {/* The text in a cursive, handwriting font */}
+            {/* Cursive handwriting text */}
             <text
               x="50%"
               y="50%"
               textAnchor="middle"
               dominantBaseline="central"
-              fontSize="64"
+              fontSize="68"
               fontFamily="'Great Vibes', 'Brush Script MT', cursive"
-              fill="#ffffff"
+              fill="url(#splashGradient)"
               mask="url(#writingMask)"
+              letterSpacing="1"
             >
-              Hello There
+              Hello There, Welcome!
             </text>
 
-            {/* Animated pen tip that follows the left edge of the reveal */}
-            <circle
-              cx={
-                // convert progress (0‑1) to the x‑coordinate on the SVG canvas
-                progress * 600
-              }
-              cy="120"
-              r="5"
-              fill="rgba(255,255,255,0.7)"
-            />
+            {/* Glowing pen-tip trace indicator */}
+            {progress > 0.05 && progress < 0.98 && (
+              <circle
+                cx={progress * svgWidth}
+                cy="105"
+                r="4"
+                fill="#00ffcc"
+                className="animate-pulse"
+                style={{
+                  filter: "drop-shadow(0px 0px 8px rgba(0, 255, 204, 0.9))",
+                }}
+              />
+            )}
           </svg>
         </div>
 
-        {/* "Start" button, shown after the writing finishes */}
+        {/* Start button */}
         {writingDone && (
-          <motion.div
+          <motion.button
             onClick={onFinish}
-            role="button"
-            className="text-white tracking-wider text-4xl mt-8 animate-pulse cursor-pointer px-1 py-2 hover:underline hover:underline-offset-5"
-            tabIndex={0}
-            initial={{ opacity: 0, y: 10 }}
+            className="mt-6 px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-lg shadow-lg hover:shadow-cyan-500/30 hover:scale-105 transition-all duration-300 cursor-pointer flex items-center gap-2"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Start
-          </motion.div>
+            <span>Explore Portfolio</span>
+            <span className="text-xl">→</span>
+          </motion.button>
         )}
       </motion.div>
     </AnimatePresence>
   );
 }
+

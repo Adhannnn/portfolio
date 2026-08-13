@@ -11,7 +11,7 @@ export default function SectionOne() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="relative w-screen min-h-screen bg-black text-white flex items-center overflow-hidden"
+        className="relative w-full min-h-[calc(100vh-6rem)] bg-black text-white flex items-center overflow-hidden py-12"
         >
         {/* Top‑left dots */}
         <div className="hidden sm:flex absolute top-10 left-4 sm:left-16 space-x-4 sm:space-x-6">

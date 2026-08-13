@@ -42,14 +42,17 @@ export default function ContactSection() {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="relative flex flex-col items-center justify-center min-h-screen w-full bg-black text-white px-4 py-24 overflow-hidden"
     >
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-4xl md:text-5xl font-extrabold mb-12"
-      >
-        Contact
-      </motion.h2>
+      <div className="flex flex-col items-center mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-4xl md:text-5xl font-extrabold mb-3 text-white"
+        >
+          Contact
+        </motion.h2>
+        <span className="h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full" />
+      </div>
 
       <motion.form
         ref={formRef}
