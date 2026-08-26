@@ -104,7 +104,7 @@ It includes features like room grouping, user management, and notification syste
 
     ⚠️ Note on the live demo: the backend for this project is self-hosted from my personal laptop (not a managed cloud server), while the frontend is deployed on Vercel. This keeps the demo free to run, but it also means response times can be slower than a real production setup, and the live site may occasionally go offline if my laptop is off or my connection drops. It's built to show the app working end-to-end in real time — for a business or production use case, the backend would need to move to a proper managed host (VPS, Railway, Render, etc.) for stable uptime and performance.`,
     type: "solo",
-    vidoe: null,
+    video: null,
     techStack: [
       "NestJS",
       "Socket.io",
