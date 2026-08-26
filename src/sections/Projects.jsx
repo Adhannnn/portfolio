@@ -115,7 +115,7 @@ It includes features like room grouping, user management, and notification syste
       "Tailwind CSS",
     ],
     thumbnail: kanbanBoard,
-    images: kanbanBoard,
+    images: [kanbanBoard],
     liveUrl: "https://kanban-board-one-lac.vercel.app",
     hasPreview: false,
     githubUrl: false,
