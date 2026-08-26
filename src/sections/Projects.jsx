@@ -25,7 +25,7 @@ import contactPage from "../assets/images/first-web/menu.png";
 import homePage from "../assets/images/first-web/home.png";
 
 /* Kanban board */
-import kanbanBoard from "../assets/images/kanban-board/kanban-board.png";
+import kanbanBoard from "../assets/images/kanban-board/kanban-board-mockup.png";
 
 const projects = [
   {
