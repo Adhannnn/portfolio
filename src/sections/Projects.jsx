@@ -24,6 +24,9 @@ import benefitPage from "../assets/images/first-web/benefits.png";
 import contactPage from "../assets/images/first-web/menu.png";
 import homePage from "../assets/images/first-web/home.png";
 
+/* Kanban board */
+import kanbanBoard from "../assets/images/kanban-board/kanban-board.png";
+
 const projects = [
   {
     /* Monitoring System */
@@ -85,6 +88,37 @@ It includes features like room grouping, user management, and notification syste
     githubUrl: null,
     liveUrl: "https://gimi-gimi-resale.netlify.app",
     hasPreview: true,
+  },
+  {
+    /* Kanban board */
+    title: "Kanban Board",
+    description: "Realtime team collaboration & project management platform",
+    details: `CollabSaaS is a full-stack project management app built for real-time team execution.
+
+    - High-performance Kanban board with smooth drag-and-drop reordering using fractional indexing (LexoRank) — moving a task only updates 1 database row instead of re-indexing the whole list, with optimistic UI and automatic rollback on failure.
+    - Realtime Pub/Sub via Socket.io room isolation per board (board:<projectId>), with live user presence and instant activity notifications when tasks are created, updated, commented on, or moved.
+    - Multi-view workspace: Kanban Board, Timeline (Gantt-style date range view), and an Analytics dashboard showing completion rate, in-progress count, and per-member workload.
+    - Rich task execution: multiple assignees, subtasks/checklists, inline comment threads, and one-click CSV export.
+    - Multi-tenant workspace system with role-based access control (Admin / Member / Viewer) enforced at the API layer.
+    - Custom user profiles, dark/light mode, and a modern SaaS UI with glassmorphism and ambient gradients.
+
+    ⚠️ Note on the live demo: the backend for this project is self-hosted from my personal laptop (not a managed cloud server), while the frontend is deployed on Vercel. This keeps the demo free to run, but it also means response times can be slower than a real production setup, and the live site may occasionally go offline if my laptop is off or my connection drops. It's built to show the app working end-to-end in real time — for a business or production use case, the backend would need to move to a proper managed host (VPS, Railway, Render, etc.) for stable uptime and performance.`,
+    type: "solo",
+    vidoe: null,
+    techStack: [
+      "NestJS",
+      "Socket.io",
+      "PostgreSQL",
+      "Prisma",
+      "Next.js 15",
+      "React",
+      "Tailwind CSS",
+    ],
+    thumbnail: kanbanBoard,
+    images: kanbanBoard,
+    liveUrl: "https://kanban-board-one-lac.vercel.app",
+    hasPreview: false,
+    githubUrl: false,
   }
 ];
 
@@ -302,11 +336,10 @@ export default function SectionFive() {
                 animate={{ y: 0, opacity: 1, scale: 1 }}
                 exit={{ y: 60, opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className={`bg-zinc-900 border border-zinc-800 rounded-2xl relative text-white shadow-2xl flex flex-col overflow-hidden ${
-                  activeProject.hasPreview
+                className={`bg-zinc-900 border border-zinc-800 rounded-2xl relative text-white shadow-2xl flex flex-col overflow-hidden ${activeProject.hasPreview
                     ? "max-w-5xl w-full h-[85vh] sm:h-[88vh]"
                     : "max-w-xl w-full max-h-[90vh] p-6 sm:p-8 overflow-y-auto"
-                }`}
+                  }`}
               >
                 {/* Close Button */}
                 <button
@@ -333,22 +366,20 @@ export default function SectionFive() {
                       <div className="flex items-center bg-zinc-800/80 p-1 rounded-xl border border-zinc-700/50 mr-8">
                         <button
                           onClick={() => setActiveTab("preview")}
-                          className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer ${
-                            activeTab === "preview"
+                          className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer ${activeTab === "preview"
                               ? "bg-cyan-500 text-black shadow-md"
                               : "text-gray-300 hover:text-white"
-                          }`}
+                            }`}
                         >
                           <FaGlobe size={13} />
                           <span>Live Website</span>
                         </button>
                         <button
                           onClick={() => setActiveTab("gallery")}
-                          className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer ${
-                            activeTab === "gallery"
+                          className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer ${activeTab === "gallery"
                               ? "bg-cyan-500 text-black shadow-md"
                               : "text-gray-300 hover:text-white"
-                          }`}
+                            }`}
                         >
                           <FaImages size={13} />
                           <span>Details</span>
